@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_kkgsMBeLEd60N8ipLbB6nA" name="类图12">
+  <packagedElement xmi:type="uml:Association" xmi:id="_M9gvoN33Ee2HzZGhIFtY0w" name="association1" memberEnd="_M92G0N33Ee2HzZGhIFtY0w _M_j-EN33Ee2HzZGhIFtY0w">
+    <ownedEnd xmi:id="_M92G0N33Ee2HzZGhIFtY0w" name="" visibility="public" type="_NAt0oN33Ee2HzZGhIFtY0w" association="_M9gvoN33Ee2HzZGhIFtY0w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M_dQYN33Ee2HzZGhIFtY0w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M_a0IN33Ee2HzZGhIFtY0w" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_M_j-EN33Ee2HzZGhIFtY0w" name="" visibility="public" type="_NG9mkN33Ee2HzZGhIFtY0w" association="_M9gvoN33Ee2HzZGhIFtY0w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M_nBYd33Ee2HzZGhIFtY0w" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M_nBYN33Ee2HzZGhIFtY0w" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_M_pdoN33Ee2HzZGhIFtY0w" name="association2" memberEnd="_M_qEsN33Ee2HzZGhIFtY0w _M_r54N33Ee2HzZGhIFtY0w" navigableOwnedEnd="_M_r54N33Ee2HzZGhIFtY0w">
+    <ownedEnd xmi:id="_M_qEsN33Ee2HzZGhIFtY0w" name="" visibility="public" type="_NG9mkN33Ee2HzZGhIFtY0w" association="_M_pdoN33Ee2HzZGhIFtY0w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M_qrwN33Ee2HzZGhIFtY0w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M_qEsd33Ee2HzZGhIFtY0w" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_M_r54N33Ee2HzZGhIFtY0w" name="" visibility="public" type="_NHWoIN33Ee2HzZGhIFtY0w" association="_M_pdoN33Ee2HzZGhIFtY0w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M_1D0d33Ee2HzZGhIFtY0w" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M_1D0N33Ee2HzZGhIFtY0w" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_M_3gEN33Ee2HzZGhIFtY0w" name="association3" memberEnd="_M_3gEd33Ee2HzZGhIFtY0w _M_58UN33Ee2HzZGhIFtY0w">
+    <ownedEnd xmi:id="_M_3gEd33Ee2HzZGhIFtY0w" name="" visibility="public" type="_NHWoIN33Ee2HzZGhIFtY0w" association="_M_3gEN33Ee2HzZGhIFtY0w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M_4HId33Ee2HzZGhIFtY0w" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M_4HIN33Ee2HzZGhIFtY0w"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_M_58UN33Ee2HzZGhIFtY0w" name="" visibility="public" type="_NH9sIN33Ee2HzZGhIFtY0w" association="_M_3gEN33Ee2HzZGhIFtY0w">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M_7Kcd33Ee2HzZGhIFtY0w" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M_7KcN33Ee2HzZGhIFtY0w" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NAt0oN33Ee2HzZGhIFtY0w" name="Member">
+    <ownedAttribute xmi:id="_NFdKsN33Ee2HzZGhIFtY0w" name="id" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NFow4N33Ee2HzZGhIFtY0w" name="name" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NFqmEN33Ee2HzZGhIFtY0w" name="phoneNumber" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NFtCUN33Ee2HzZGhIFtY0w" name="email" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NFu3gN33Ee2HzZGhIFtY0w" name="address" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_NFj4YN33Ee2HzZGhIFtY0w" name="String"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NGAkUN33Ee2HzZGhIFtY0w" name="GoldMember">
+    <generalization xmi:id="_NGIgIN33Ee2HzZGhIFtY0w" general="_NAt0oN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NGRDAN33Ee2HzZGhIFtY0w" name="discount" visibility="private" type="_NGRqEN33Ee2HzZGhIFtY0w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_NGRqEN33Ee2HzZGhIFtY0w" name="double"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NGhhsN33Ee2HzZGhIFtY0w" name="SilverMember">
+    <generalization xmi:id="_NGmaMN33Ee2HzZGhIFtY0w" general="_NAt0oN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NGuWAN33Ee2HzZGhIFtY0w" name="discount" visibility="private" type="_NGRqEN33Ee2HzZGhIFtY0w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NG9mkN33Ee2HzZGhIFtY0w" name="Order">
+    <ownedAttribute xmi:id="_NHHXkN33Ee2HzZGhIFtY0w" name="orderId" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NHWoIN33Ee2HzZGhIFtY0w" name="ProductItem">
+    <ownedAttribute xmi:id="_NHlRoN33Ee2HzZGhIFtY0w" name="orderId" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NHnG0N33Ee2HzZGhIFtY0w" name="productId" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NHo8AN33Ee2HzZGhIFtY0w" name="productNum" visibility="private" type="_NHqKIN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NHrYQN33Ee2HzZGhIFtY0w" name="productPrice" visibility="private" type="_NGRqEN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NHt0gN33Ee2HzZGhIFtY0w" name="discount" visibility="private" type="_NGRqEN33Ee2HzZGhIFtY0w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_NHqKIN33Ee2HzZGhIFtY0w" name="int"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NH9sIN33Ee2HzZGhIFtY0w" name="Product">
+    <ownedAttribute xmi:id="_NILukN33Ee2HzZGhIFtY0w" name="productId" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NIM8sN33Ee2HzZGhIFtY0w" name="productName" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NIPY8N33Ee2HzZGhIFtY0w" name="productPrice" visibility="private" type="_NGRqEN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NIR1MN33Ee2HzZGhIFtY0w" name="productStock" visibility="private" type="_NHqKIN33Ee2HzZGhIFtY0w"/>
+    <ownedAttribute xmi:id="_NIU4gN33Ee2HzZGhIFtY0w" name="productPlace" visibility="private" type="_NFj4YN33Ee2HzZGhIFtY0w"/>
+  </packagedElement>
+</uml:Model>

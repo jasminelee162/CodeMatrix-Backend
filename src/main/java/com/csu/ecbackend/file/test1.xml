@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_kkgsMBeLEd60N8ipLbB6nA" name="Exp3Q9">
+  <packagedElement xmi:type="uml:Association" xmi:id="_zoL48N5gEe2dXLhHRf3CMQ" name="association1" memberEnd="_zoOVMN5gEe2dXLhHRf3CMQ _zpPo4N5gEe2dXLhHRf3CMQ" navigableOwnedEnd="_zpPo4N5gEe2dXLhHRf3CMQ">
+    <ownedEnd xmi:id="_zoOVMN5gEe2dXLhHRf3CMQ" name="" visibility="public" type="_zs_gcN5gEe2dXLhHRf3CMQ" association="_zoL48N5gEe2dXLhHRf3CMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpNMoN5gEe2dXLhHRf3CMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zpMlkN5gEe2dXLhHRf3CMQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_zpPo4N5gEe2dXLhHRf3CMQ" name="" visibility="public" type="_zp-BoN5gEe2dXLhHRf3CMQ" aggregation="shared" association="_zoL48N5gEe2dXLhHRf3CMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpQP8d5gEe2dXLhHRf3CMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zpQP8N5gEe2dXLhHRf3CMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_zpSFIN5gEe2dXLhHRf3CMQ" name="association2" memberEnd="_zpSFId5gEe2dXLhHRf3CMQ _zpUhYN5gEe2dXLhHRf3CMQ" navigableOwnedEnd="_zpUhYN5gEe2dXLhHRf3CMQ">
+    <ownedEnd xmi:id="_zpSFId5gEe2dXLhHRf3CMQ" name="" visibility="public" type="_zt5fYN5gEe2dXLhHRf3CMQ" association="_zpSFIN5gEe2dXLhHRf3CMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpSsMd5gEe2dXLhHRf3CMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zpSsMN5gEe2dXLhHRf3CMQ"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_zpUhYN5gEe2dXLhHRf3CMQ" name="" visibility="public" type="_zp-BoN5gEe2dXLhHRf3CMQ" aggregation="shared" association="_zpSFIN5gEe2dXLhHRf3CMQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zpUhYt5gEe2dXLhHRf3CMQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zpUhYd5gEe2dXLhHRf3CMQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zp-BoN5gEe2dXLhHRf3CMQ" name="AbstractExaminee" isAbstract="true">
+    <ownedOperation xmi:id="_zrSQQN5gEe2dXLhHRf3CMQ" name="add" visibility="public" bodyCondition="_zrVTkN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zrVTkN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zrXIwN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zro1kN5gEe2dXLhHRf3CMQ" name="examinee" type="_zp-BoN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zrsf8N5gEe2dXLhHRf3CMQ" name="add" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zruVIN5gEe2dXLhHRf3CMQ" name="remove" visibility="public" bodyCondition="_zrvjQN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zrvjQN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zrwxYN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zrymkN5gEe2dXLhHRf3CMQ" name="examinee" type="_zp-BoN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zrz0sN5gEe2dXLhHRf3CMQ" name="remove" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zr1C0N5gEe2dXLhHRf3CMQ" name="updateArrangement" visibility="public" bodyCondition="_zr2Q8N5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zr2Q8N5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zr24AN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zr4tMN5gEe2dXLhHRf3CMQ" name="updateArrangement" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zr5UQN5gEe2dXLhHRf3CMQ" name="updateResults" visibility="public" bodyCondition="_zr6iYN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zr6iYN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zr7JcN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zr8-oN5gEe2dXLhHRf3CMQ" name="updateResults" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_zrtHAN5gEe2dXLhHRf3CMQ" name="void"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zsDFQN5gEe2dXLhHRf3CMQ" name="Examinee">
+    <generalization xmi:id="_zsIk0N5gEe2dXLhHRf3CMQ" general="_zp-BoN5gEe2dXLhHRf3CMQ"/>
+    <ownedAttribute xmi:id="_zsP5kN5gEe2dXLhHRf3CMQ" name="name" visibility="private" type="_zsRHsN5gEe2dXLhHRf3CMQ"/>
+    <ownedOperation xmi:id="_zsct4N5gEe2dXLhHRf3CMQ" name="examinee" visibility="public" bodyCondition="_zsd8AN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zsd8AN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zsd8Ad5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zsfxMN5gEe2dXLhHRf3CMQ" name="setName" visibility="public" bodyCondition="_zsg_UN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zsg_UN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zshmYN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zsjbkN5gEe2dXLhHRf3CMQ" name="name" type="_zsRHsN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zslQwN5gEe2dXLhHRf3CMQ" name="setName" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zsl30N5gEe2dXLhHRf3CMQ" name="add" visibility="public" bodyCondition="_zsme4N5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zsme4N5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zsnF8N5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zso7IN5gEe2dXLhHRf3CMQ" name="examinee" type="_zsDFQN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zsqwUN5gEe2dXLhHRf3CMQ" name="add" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zsr-cN5gEe2dXLhHRf3CMQ" name="remove" visibility="public" bodyCondition="_zstMkN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zstMkN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zstMkd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zsvBwN5gEe2dXLhHRf3CMQ" name="examinee" type="_zsDFQN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zswP4N5gEe2dXLhHRf3CMQ" name="remove" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zsw28N5gEe2dXLhHRf3CMQ" name="updateArrangement" visibility="public" bodyCondition="_zsyFEN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zsyFEN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zsyFEd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zs0hUN5gEe2dXLhHRf3CMQ" name="updateArrangement" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zs1vcN5gEe2dXLhHRf3CMQ" name="updateResults" visibility="public" bodyCondition="_zs29kN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zs29kN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zs29kd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zs5Z0N5gEe2dXLhHRf3CMQ" name="updateResults" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_zsRHsN5gEe2dXLhHRf3CMQ" name="String"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zs_gcN5gEe2dXLhHRf3CMQ" name="Group">
+    <generalization xmi:id="_ztDK0N5gEe2dXLhHRf3CMQ" general="_zp-BoN5gEe2dXLhHRf3CMQ"/>
+    <ownedAttribute xmi:id="_ztKfkN5gEe2dXLhHRf3CMQ" name="name" visibility="private" type="_zsRHsN5gEe2dXLhHRf3CMQ"/>
+    <ownedAttribute xmi:id="_ztMUwN5gEe2dXLhHRf3CMQ" name="examineeList" visibility="private" type="_ztM70N5gEe2dXLhHRf3CMQ"/>
+    <ownedOperation xmi:id="_ztXT4N5gEe2dXLhHRf3CMQ" name="group" visibility="public" bodyCondition="_ztYiAN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_ztYiAN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ztZJEN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zta-QN5gEe2dXLhHRf3CMQ" name="setName" visibility="public" bodyCondition="_ztcMYN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_ztcMYN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ztczcN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ztfPsN5gEe2dXLhHRf3CMQ" name="name" type="_zsRHsN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_ztgd0N5gEe2dXLhHRf3CMQ" name="setName" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zthr8N5gEe2dXLhHRf3CMQ" name="add" visibility="public" bodyCondition="_ztiTAN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_ztiTAN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ztiTAd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ztkvQN5gEe2dXLhHRf3CMQ" name="examinee" type="_zs_gcN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_ztl9YN5gEe2dXLhHRf3CMQ" name="add" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ztmkcN5gEe2dXLhHRf3CMQ" name="remove" visibility="public" bodyCondition="_ztnykN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_ztnykN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ztnykd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ztpnwN5gEe2dXLhHRf3CMQ" name="examinee" type="_zs_gcN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_ztq14N5gEe2dXLhHRf3CMQ" name="remove" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ztsEAN5gEe2dXLhHRf3CMQ" name="updateArrangement" visibility="public" bodyCondition="_ztsrEN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_ztsrEN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ztsrEd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ztvHUN5gEe2dXLhHRf3CMQ" name="updateArrangement" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ztwVcN5gEe2dXLhHRf3CMQ" name="updateResults" visibility="public" bodyCondition="_ztw8gN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_ztw8gN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ztw8gd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ztyxsN5gEe2dXLhHRf3CMQ" name="updateResults" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ztM70N5gEe2dXLhHRf3CMQ" name="ArrayList"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zt5fYN5gEe2dXLhHRf3CMQ" name="AbstractExamination" isAbstract="true">
+    <ownedAttribute xmi:id="_zuA0IN5gEe2dXLhHRf3CMQ" name="candidatesList" visibility="protected" type="_zsDFQN5gEe2dXLhHRf3CMQ"/>
+    <ownedOperation xmi:id="_zuNocN5gEe2dXLhHRf3CMQ" name="add" visibility="public" bodyCondition="_zuO2kN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zuO2kN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zuO2kd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zuQrwN5gEe2dXLhHRf3CMQ" name="examinee" type="_zp-BoN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zuSg8N5gEe2dXLhHRf3CMQ" name="add" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zuTvEN5gEe2dXLhHRf3CMQ" name="remove" visibility="public" bodyCondition="_zuUWIN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zuUWIN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zuUWId5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zuXZcN5gEe2dXLhHRf3CMQ" name="examinee" type="_zp-BoN5gEe2dXLhHRf3CMQ"/>
+      <ownedParameter xmi:id="_zuYnkN5gEe2dXLhHRf3CMQ" name="remove" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zuZOoN5gEe2dXLhHRf3CMQ" name="arrangementChange" visibility="public" bodyCondition="_zuacwN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zuacwN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zubD0N5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zucR8N5gEe2dXLhHRf3CMQ" name="arrangementChange" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zudgEN5gEe2dXLhHRf3CMQ" name="publishResults" visibility="public" bodyCondition="_zufVQN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zufVQN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zufVQd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zuhxgN5gEe2dXLhHRf3CMQ" name="publishResults" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zuiYkN5gEe2dXLhHRf3CMQ" name="notifyArrangement" visibility="public" bodyCondition="_zukNwN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zukNwN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zukNwd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zumC8N5gEe2dXLhHRf3CMQ" name="notifyArrangement" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zumqAN5gEe2dXLhHRf3CMQ" name="notifyResults" visibility="public" bodyCondition="_zuofMN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zuofMN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zuofMd5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zuqUYN5gEe2dXLhHRf3CMQ" name="notifyResults" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zuvz8N5gEe2dXLhHRf3CMQ" name="Examination">
+    <generalization xmi:id="_zu0FYN5gEe2dXLhHRf3CMQ" general="_zt5fYN5gEe2dXLhHRf3CMQ"/>
+    <ownedAttribute xmi:id="_zu5k8N5gEe2dXLhHRf3CMQ" name="candidatesList" visibility="protected" type="_zsDFQN5gEe2dXLhHRf3CMQ"/>
+    <ownedOperation xmi:id="_zvDV8N5gEe2dXLhHRf3CMQ" name="notifyArrangement" visibility="public" bodyCondition="_zvD9AN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zvD9AN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zvEkEN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zvHAUN5gEe2dXLhHRf3CMQ" name="notifyArrangement" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_zvHnYN5gEe2dXLhHRf3CMQ" name="notifyResults" visibility="public" bodyCondition="_zvIOcN5gEe2dXLhHRf3CMQ">
+      <ownedRule xmi:id="_zvIOcN5gEe2dXLhHRf3CMQ">
+        <specification xmi:type="uml:LiteralString" xmi:id="_zvI1gN5gEe2dXLhHRf3CMQ" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_zvLRwN5gEe2dXLhHRf3CMQ" name="notifyResults" type="_zrtHAN5gEe2dXLhHRf3CMQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zvR_cN5gEe2dXLhHRf3CMQ" name="Client" clientDependency="_zv2nMN5gEe2dXLhHRf3CMQ _zv31UN5gEe2dXLhHRf3CMQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_zv2nMN5gEe2dXLhHRf3CMQ" name="Dependency_2" supplier="_zt5fYN5gEe2dXLhHRf3CMQ" client="_zvR_cN5gEe2dXLhHRf3CMQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_zv31UN5gEe2dXLhHRf3CMQ" name="Dependency_3" supplier="_zp-BoN5gEe2dXLhHRf3CMQ" client="_zvR_cN5gEe2dXLhHRf3CMQ"/>
+</uml:Model>

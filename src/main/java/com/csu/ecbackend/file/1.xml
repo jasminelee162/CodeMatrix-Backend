@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_kkgsMBeLEd60N8ipLbB6nA" name="T3">
+  <packagedElement xmi:type="uml:Association" xmi:id="_L99rQN4EEe2Vic_7UPgvEw" name="Association_1" memberEnd="_L-nykN4EEe2Vic_7UPgvEw _MCFWQN4EEe2Vic_7UPgvEw" navigableOwnedEnd="_MCFWQN4EEe2Vic_7UPgvEw">
+    <ownedEnd xmi:id="_L-nykN4EEe2Vic_7UPgvEw" name="" visibility="public" type="_MDtG4N4EEe2Vic_7UPgvEw" association="_L99rQN4EEe2Vic_7UPgvEw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MBoqUN4EEe2Vic_7UPgvEw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MBfgYN4EEe2Vic_7UPgvEw"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_MCFWQN4EEe2Vic_7UPgvEw" name="" visibility="public" type="_MDtG4N4EEe2Vic_7UPgvEw" aggregation="shared" association="_L99rQN4EEe2Vic_7UPgvEw">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MCSxod4EEe2Vic_7UPgvEw" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MCSxoN4EEe2Vic_7UPgvEw"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MDtG4N4EEe2Vic_7UPgvEw" name="DataFilter">
+    <ownedAttribute xmi:id="_MHh28N4EEe2Vic_7UPgvEw" name="nextFilter" visibility="protected" type="_MDtG4N4EEe2Vic_7UPgvEw"/>
+    <ownedOperation xmi:id="_MIL-QN4EEe2Vic_7UPgvEw" name="setNextFilter" visibility="public" bodyCondition="_MIe5MN4EEe2Vic_7UPgvEw">
+      <ownedRule xmi:id="_MIe5MN4EEe2Vic_7UPgvEw">
+        <specification xmi:type="uml:LiteralString" xmi:id="_MIrtgN4EEe2Vic_7UPgvEw" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_MJJAgN4EEe2Vic_7UPgvEw" name="nextFilter" type="_MDtG4N4EEe2Vic_7UPgvEw" direction="inout"/>
+      <ownedParameter xmi:id="_MJJAgd4EEe2Vic_7UPgvEw" name="setNextFilter" type="_MJSKcN4EEe2Vic_7UPgvEw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_MJb7cN4EEe2Vic_7UPgvEw" name="handleData" visibility="public" bodyCondition="_MJb7cd4EEe2Vic_7UPgvEw">
+      <ownedRule xmi:id="_MJb7cd4EEe2Vic_7UPgvEw">
+        <specification xmi:type="uml:LiteralString" xmi:id="_MJb7ct4EEe2Vic_7UPgvEw" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_MJlscN4EEe2Vic_7UPgvEw" name="handleData" type="_MJSKcN4EEe2Vic_7UPgvEw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_MJSKcN4EEe2Vic_7UPgvEw" name="void"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MJlscd4EEe2Vic_7UPgvEw" name="CharacterCodeFilter">
+    <generalization xmi:id="_MJ8RwN4EEe2Vic_7UPgvEw" general="_MDtG4N4EEe2Vic_7UPgvEw"/>
+    <ownedOperation xmi:id="_MKY9sN4EEe2Vic_7UPgvEw" name="handleData" visibility="public" bodyCondition="_MKY9sd4EEe2Vic_7UPgvEw">
+      <ownedRule xmi:id="_MKY9sd4EEe2Vic_7UPgvEw">
+        <specification xmi:type="uml:LiteralString" xmi:id="_MKY9st4EEe2Vic_7UPgvEw" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_MKY9s94EEe2Vic_7UPgvEw" name="handleData" type="_MJSKcN4EEe2Vic_7UPgvEw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MKwKEN4EEe2Vic_7UPgvEw" name="DataTypeFilter">
+    <generalization xmi:id="_MK5UAN4EEe2Vic_7UPgvEw" general="_MDtG4N4EEe2Vic_7UPgvEw"/>
+    <ownedOperation xmi:id="_MLV_8N4EEe2Vic_7UPgvEw" name="handleData" visibility="public" bodyCondition="_MLV_8d4EEe2Vic_7UPgvEw">
+      <ownedRule xmi:id="_MLV_8d4EEe2Vic_7UPgvEw">
+        <specification xmi:type="uml:LiteralString" xmi:id="_MLV_8t4EEe2Vic_7UPgvEw" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_MLfw8N4EEe2Vic_7UPgvEw" name="handleData" type="_MJSKcN4EEe2Vic_7UPgvEw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MLo64N4EEe2Vic_7UPgvEw" name="DataVerificationFilter">
+    <generalization xmi:id="_MLo64d4EEe2Vic_7UPgvEw" general="_MDtG4N4EEe2Vic_7UPgvEw"/>
+    <ownedOperation xmi:id="_MMJ4QN4EEe2Vic_7UPgvEw" name="handleData" visibility="public" bodyCondition="_MMJ4Qd4EEe2Vic_7UPgvEw">
+      <ownedRule xmi:id="_MMJ4Qd4EEe2Vic_7UPgvEw">
+        <specification xmi:type="uml:LiteralString" xmi:id="_MMJ4Qt4EEe2Vic_7UPgvEw" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_MMTpQN4EEe2Vic_7UPgvEw" name="handleData" type="_MJSKcN4EEe2Vic_7UPgvEw" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MMTpQd4EEe2Vic_7UPgvEw" name="Client" clientDependency="_MNacgN4EEe2Vic_7UPgvEw"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_MNacgN4EEe2Vic_7UPgvEw" name="Dependency_1" supplier="_MDtG4N4EEe2Vic_7UPgvEw" client="_MMTpQd4EEe2Vic_7UPgvEw"/>
+</uml:Model>
