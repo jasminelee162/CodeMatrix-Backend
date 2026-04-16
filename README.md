@@ -11,7 +11,7 @@
 - 请求体模板：
 	```json
 	{
-		"prompt": "你好，帮我介绍一下这个项目"
+		"prompt": "你好，你是什么模型？"
 	}
 	```
 - 返回数据结构：
@@ -30,8 +30,8 @@
 AI 配置在 `src/main/resources/application.properties` 中：
 
 ```properties
-ai.chat.api.url=https://api.openai.com/v1/chat/completions
+ai.chat.api.url=https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
 ai.chat.api.key=sk-1ef80b56460543df9ba3e2a285d48f1b
 ```
 
-已将 API Key 直接写入配置，方便小组成员运行，但仅建议在课堂作业环境中使用。
+**注意**：如果账户余额不足，接口会返回友好提示信息，不会崩溃。

@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +27,7 @@ public class AiChatService {
     private final String apiKey;
 
     public AiChatService(
-            @Value("${ai.chat.api.url:https://api.openai.com/v1/chat/completions}") String apiUrl,
+            @Value("${ai.chat.api.url:https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation}") String apiUrl,
             @Value("${ai.chat.api.key:}") String apiKey) {
         this.restTemplate = new RestTemplate();
         this.objectMapper = new ObjectMapper();
@@ -49,35 +50,47 @@ public class AiChatService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(key);
 
-        Map<String, Object> body = new HashMap<>();
-        body.put("model", "gpt-3.5-turbo");
-        body.put("temperature", 0.8);
-
+        Map<String, Object> input = new HashMap<>();
         List<Map<String, String>> messages = new ArrayList<>();
         Map<String, String> message = new HashMap<>();
         message.put("role", "user");
         message.put("content", prompt);
         messages.add(message);
-        body.put("messages", messages);
+        input.put("messages", messages);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("model", "qwen-turbo");
+        body.put("input", input);
 
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(body, headers);
-        ResponseEntity<String> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.POST, requestEntity,
-                String.class);
-        String responseBody = responseEntity.getBody();
-
-        if (!responseEntity.getStatusCode().is2xxSuccessful() || responseBody == null) {
-            throw new RuntimeException("AI chat provider returned an error: " + responseEntity.getStatusCodeValue());
-        }
-
         try {
-            JsonNode root = objectMapper.readTree(responseBody);
-            JsonNode contentNode = root.path("choices").path(0).path("message").path("content");
-            if (contentNode.isMissingNode() || contentNode.isNull()) {
-                return root.path("error").path("message").asText("AI chat response is empty.");
+            ResponseEntity<String> responseEntity = restTemplate.exchange(apiUrl, HttpMethod.POST, requestEntity,
+                    String.class);
+            String responseBody = responseEntity.getBody();
+
+            if (!responseEntity.getStatusCode().is2xxSuccessful() || responseBody == null) {
+                throw new RuntimeException(
+                        "AI chat provider returned an error: " + responseEntity.getStatusCodeValue());
             }
-            return contentNode.asText();
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to parse AI chat response.", e);
+
+            try {
+                JsonNode root = objectMapper.readTree(responseBody);
+                JsonNode contentNode = root.path("output").path("text");
+                if (contentNode.isMissingNode() || contentNode.isNull()) {
+                    return root.path("message").asText("AI chat response is empty.");
+                }
+                return contentNode.asText();
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to parse AI chat response.", e);
+            }
+        } catch (HttpClientErrorException e) {
+            // 检查是否是欠费错误
+            String responseBody = e.getResponseBodyAsString();
+            if (responseBody != null && responseBody.contains("Arrearage")) {
+                return "抱歉，AI 服务当前不可用（账户余额不足）。这是小组作业演示，请联系管理员充值或使用其他方式。";
+            }
+            throw new RuntimeException(
+                    "AI chat provider returned an error: " + e.getStatusCode() + " - " + responseBody, e);
         }
     }
 }
