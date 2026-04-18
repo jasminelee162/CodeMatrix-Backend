@@ -1,8 +1,6 @@
-## 电子商务
-
 ## AI 对话功能
 
-本项目已集成一个简单的 AI 对话接口，使用阿里云百炼（OpenAI 兼容）进行问答。
+本项目已集成一个简单的 AI 对话接口，使用 DeepSeek 进行问答。
 
 ### 接口说明
 
@@ -30,8 +28,8 @@
 AI 配置在 `src/main/resources/application.properties` 中：
 
 ```properties
-ai.chat.api.url=https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
-ai.chat.api.key=sk-1ef80b56460543df9ba3e2a285d48f1b
+ai.chat.api.url=https://api.deepseek.com/v1/chat/completions
+ai.chat.api.key=sk-8dac650632804c9a8e9213a80144baf0
 ```
 
-**注意**：如果账户余额不足，接口会返回友好提示信息，不会崩溃。
+**注意**：DeepSeek API 需要付费使用，请节约调用次数。接口会检查余额不足的情况并返回友好提示。

@@ -27,7 +27,7 @@ public class AiChatService {
     private final String apiKey;
 
     public AiChatService(
-            @Value("${ai.chat.api.url:https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation}") String apiUrl,
+            @Value("${ai.chat.api.url:https://api.deepseek.com/v1/chat/completions}") String apiUrl,
             @Value("${ai.chat.api.key:}") String apiKey) {
         this.restTemplate = new RestTemplate();
         this.objectMapper = new ObjectMapper();
@@ -50,17 +50,16 @@ public class AiChatService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setBearerAuth(key);
 
-        Map<String, Object> input = new HashMap<>();
+        Map<String, Object> body = new HashMap<>();
+        body.put("model", "deepseek-chat");
+        body.put("temperature", 0.7);
+
         List<Map<String, String>> messages = new ArrayList<>();
         Map<String, String> message = new HashMap<>();
         message.put("role", "user");
         message.put("content", prompt);
         messages.add(message);
-        input.put("messages", messages);
-
-        Map<String, Object> body = new HashMap<>();
-        body.put("model", "qwen-turbo");
-        body.put("input", input);
+        body.put("messages", messages);
 
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(body, headers);
         try {
@@ -75,19 +74,20 @@ public class AiChatService {
 
             try {
                 JsonNode root = objectMapper.readTree(responseBody);
-                JsonNode contentNode = root.path("output").path("text");
+                JsonNode contentNode = root.path("choices").path(0).path("message").path("content");
                 if (contentNode.isMissingNode() || contentNode.isNull()) {
-                    return root.path("message").asText("AI chat response is empty.");
+                    return root.path("error").path("message").asText("AI chat response is empty.");
                 }
                 return contentNode.asText();
             } catch (Exception e) {
                 throw new RuntimeException("Failed to parse AI chat response.", e);
             }
         } catch (HttpClientErrorException e) {
-            // 检查是否是欠费错误
+            // 检查是否是余额不足或其他API错误
             String responseBody = e.getResponseBodyAsString();
-            if (responseBody != null && responseBody.contains("Arrearage")) {
-                return "抱歉，AI 服务当前不可用（账户余额不足）。这是小组作业演示，请联系管理员充值或使用其他方式。";
+            if (responseBody != null && (responseBody.contains("insufficient") || responseBody.contains("balance")
+                    || responseBody.contains("quota"))) {
+                return "抱歉，AI 服务当前不可用（账户余额不足或配额用完）。这是小组作业演示，请节约使用或联系管理员。";
             }
             throw new RuntimeException(
                     "AI chat provider returned an error: " + e.getStatusCode() + " - " + responseBody, e);
