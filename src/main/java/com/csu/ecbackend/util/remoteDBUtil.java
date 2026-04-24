@@ -7,7 +7,7 @@ import java.sql.*;
 public class remoteDBUtil {
     private remoteDBUtil() {
     }
-   private static String mySQLDriver="com.mysql.cj.jdbc.Driver";
+    private static String mySQLDriver="com.mysql.cj.jdbc.Driver";
     private static String masterUrl="jdbc:mysql://47.101.195.251:3306/redisDemo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static String slaveUrl="jdbc:mysql://47.92.128.133:3316/redisDemo?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static  String user="root";
