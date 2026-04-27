@@ -36,6 +36,55 @@
 }
 ```
 
+你可以按不同度量体系传入不同指标，下面给出 3 组可直接使用的示例。
+
+#### 示例1：功能点 IFPUG（UFP、VAF、FP）
+
+```json
+{
+  "projectName": "CodeMatrix",
+  "metricSystem": "IFPUG",
+  "context": "功能点估算与复核",
+  "metrics": {
+    "UFP": 132,
+    "VAF": 1.03,
+    "FP": 135.96
+  }
+}
+```
+
+#### 示例2：用例点度量（UUCP、TCF、EF、UPC）
+
+```json
+{
+  "projectName": "CodeMatrix",
+  "metricSystem": "UseCasePoint",
+  "context": "需求阶段用例点估算",
+  "metrics": {
+    "UUCP": 96,
+    "TCF": 0.95,
+    "EF": 1.05,
+    "UPC": 95.76
+  }
+}
+```
+
+#### 示例3：代码度量（注释行数、非注释行数、物理代码行数、逻辑代码行数）
+
+```json
+{
+  "projectName": "CodeMatrix",
+  "metricSystem": "Code",
+  "context": "版本发布前代码规模评估",
+  "metrics": {
+    "注释行数": 320,
+    "非注释行数": 4280,
+    "物理代码行数": 4600,
+    "逻辑代码行数": 3890
+  }
+}
+```
+
 - 返回体核心字段：
   - `overallAssessment`：总体评价
   - `riskLevel`：风险等级
