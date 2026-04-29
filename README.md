@@ -139,19 +139,6 @@ src/main/java/com/csu/ecbackend/
 - **参数**: `{"prompt": "查询内容"}`
 - **返回**: AI 回复
 
-## 数据库配置
-
-```properties
-# MySQL 配置
-spring.datasource.url=jdbc:mysql://47.101.195.251:3306/redisDemo?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.datasource.username=root
-spring.datasource.password=123456
-
-# MyBatis-Plus 配置
-logging.level.org.csu.mypetstore.api.persistence=trace
-```
-
 ## AI 配置
 
 ```properties
