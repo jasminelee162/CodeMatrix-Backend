@@ -1,0 +1,266 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 255852544 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=44552, tid=42996
+#
+# JRE version:  (21.0.4+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.4+8-LTS-274, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -javaagent:D:\program\IDEA\IntelliJ IDEA 2023.2.3\lib\idea_rt.jar=52814:D:\program\IDEA\IntelliJ IDEA 2023.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 com.csu.ecbackend.EcBackendApplication
+
+Host: AMD Ryzen 7 6800H with Radeon Graphics         , 16 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7019)
+Time: Thu Apr 23 12:48:56 2026  Windows 11 , 64 bit Build 26100 (10.0.26100.7019) elapsed time: 0.024950 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000021187805f00):  JavaThread "Unknown thread" [_thread_in_vm, id=42996, stack(0x0000004f95e00000,0x0000004f95f00000) (1024K)]
+
+Stack: [0x0000004f95e00000,0x0000004f95f00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c8e59]
+V  [jvm.dll+0x853181]
+V  [jvm.dll+0x8556ae]
+V  [jvm.dll+0x855d83]
+V  [jvm.dll+0x27d526]
+V  [jvm.dll+0x6c55f5]
+V  [jvm.dll+0x6ba17a]
+V  [jvm.dll+0x352a8a]
+V  [jvm.dll+0x35a6e6]
+V  [jvm.dll+0x3acdae]
+V  [jvm.dll+0x3ad058]
+V  [jvm.dll+0x326dec]
+V  [jvm.dll+0x32794b]
+V  [jvm.dll+0x81c569]
+V  [jvm.dll+0x3b9a11]
+V  [jvm.dll+0x805948]
+V  [jvm.dll+0x44ec5e]
+V  [jvm.dll+0x450851]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c53c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fff68406c08, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000021189c549c0 WorkerThread "GC Thread#0"                     [id=14812, stack(0x0000004f95f00000,0x0000004f96000000) (1024K)]
+  0x0000021189c65940 ConcurrentGCThread "G1 Main Marker"            [id=20268, stack(0x0000004f96000000,0x0000004f96100000) (1024K)]
+  0x0000021189c66250 WorkerThread "G1 Conc#0"                       [id=10332, stack(0x0000004f96100000,0x0000004f96200000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff67b79577]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fff68477f98] Heap_lock - owner thread: 0x0000021187805f00
+
+Heap address: 0x000000070ce00000, size: 3890 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x000000070ce00000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff67f61df9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.018 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7f2e40000 - 0x00007ff7f2e50000 	C:\Program Files\Java\jdk-21\bin\java.exe
+0x00007ff80abc0000 - 0x00007ff80ae28000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff809fa0000 - 0x00007ff80a069000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff807d10000 - 0x00007ff808108000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8083c0000 - 0x00007ff80850b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffff4600000 - 0x00007ffff461b000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007ffff7230000 - 0x00007ffff7249000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007ff809210000 - 0x00007ff8092c4000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff809ef0000 - 0x00007ff809f99000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff8094a0000 - 0x00007ff809546000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff80a850000 - 0x00007ff80a968000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff8092d0000 - 0x00007ff809497000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff808390000 - 0x00007ff8083b7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff809840000 - 0x00007ff80986b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffef9e0000 - 0x00007fffefc74000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7019_none_3e06ffa0e335b8a8\COMCTL32.dll
+0x00007ff808260000 - 0x00007ff80838c000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8085c0000 - 0x00007ff808663000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff800b10000 - 0x00007ff800b1b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff809870000 - 0x00007ff8098a1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffffafd0000 - 0x00007ffffafdc000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007fffd3ca0000 - 0x00007fffd3d2e000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007fff67840000 - 0x00007fff68553000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007ff809620000 - 0x00007ff809694000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff807b70000 - 0x00007ff807bce000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff800060000 - 0x00007ff800095000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff807b50000 - 0x00007ff807b64000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff806ad0000 - 0x00007ff806aeb000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffffafb0000 - 0x00007ffffafba000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007ff805300000 - 0x00007ff805542000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff8099f0000 - 0x00007ff809d7b000 	C:\WINDOWS\System32\combase.dll
+0x00007ff809760000 - 0x00007ff809837000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fffe9700000 - 0x00007fffe973c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff808510000 - 0x00007ff8085b5000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffff4650000 - 0x00007ffff465f000 	C:\Program Files\Java\jdk-21\bin\instrument.dll
+0x00007ffff4470000 - 0x00007ffff448f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7019_none_3e06ffa0e335b8a8;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -javaagent:D:\program\IDEA\IntelliJ IDEA 2023.2.3\lib\idea_rt.jar=52814:D:\program\IDEA\IntelliJ IDEA 2023.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 
+java_command: com.csu.ecbackend.EcBackendApplication
+java_class_path (initial): D:\Learning\2025-2026(2)\Software Quality Assurance\CodeMatrix\Backend\target\classes;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-swagger2\2.9.2\springfox-swagger2-2.9.2.jar;C:\Users\Lenovo\.m2\repository\io\swagger\swagger-annotations\1.5.20\swagger-annotations-1.5.20.jar;C:\Users\Lenovo\.m2\repository\io\swagger\swagger-models\1.5.20\swagger-models-1.5.20.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.11.3\jackson-annotations-2.11.3.jar;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-spi\2.9.2\springfox-spi-2.9.2.jar;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-core\2.9.2\springfox-core-2.9.2.jar;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-schema\2.9.2\springfox-schema-2.9.2.jar;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-swagger-common\2.9.2\springfox-swagger-common-2.9.2.jar;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-spring-web\2.9.2\springfox-spring-web-2.9.2.jar;C:\Users\Lenovo\.m2\repository\com\google\guava\guava\20.0\guava-20.0.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Lenovo\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\Lenovo\.m2\repository\org\springframework\plugin\spring-plugin-core\1.2.0.RELEASE\spring-plugin-core-1.2.0.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-beans\5.2.12.RELEASE\spring-beans-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-context\5.2.12.RELEASE\spring-context-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\plugin\spring-plugin-metadata\1.2.0.RELEASE\spring-plugin-metadata-1.2.0.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\mapstruct\mapstruct\1.2.0.Final\mapstruct-1.2.0.Final.jar;C:\Users\Lenovo\.m2\repository\com\github\javaparser\javaparser-symbol-solver-core\3.15.21\javaparser-symbol-solver-core-3.15.21.jar;C:\Users\Lenovo\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Lenovo\.m2\repository\com\github\javaparser\javaparser-core\3.15.21\javaparser-core-3.15.21.jar;C:\Users\Lenovo\.m2\repository\io\springfox\springfox-swagger-ui\2.9.2\springfox-swagger-ui-2.9.2.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.3.7.RELEASE\spring-boot-starter-web-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter\2.3.7.RELEASE\spring-boot-starter-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.3.7.RELEASE\spring-boot-starter-logging-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.13.3\log4j-to-slf4j-2.13.3.jar;C:\Users\Lenovo\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar;C:\Users\Lenovo\.m2\repository\org\slf4j\jul-to-slf4j\1.7.30\jul-to-slf4j-1.7.30.jar;C:\Users\Lenovo\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\Lenovo\.m2\repository\org\yaml\snakeyaml\1.26\snakeyaml-1.26.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.3.7.RELEASE\spring-boot-starter-json-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.11.3\jackson-datatype-jdk8-2.11.3.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.11.3\jackson-datatype-jsr310-2.11.3.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.11.3\jackson-module-parameter-names-2.11.3.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.3.7.RELEASE\spring-boot-starter-tomcat-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.41\tomcat-embed-core-9.0.41.jar;C:\Users\Lenovo\.m2\repository\org\glassfish\jakarta.el\3.0.3\jakarta.el-3.0.3.jar;C:\Users\Lenovo\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.41\tomcat-embed-websocket-9.0.41.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-web\5.2.12.RELEASE\spring-web-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-webmvc\5.2.12.RELEASE\spring-webmvc-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-expression\5.2.12.RELEASE\spring-expression-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\com\belerweb\pinyin4j\2.5.0\pinyin4j-2.5.0.jar;C:\Users\Lenovo\.m2\repository\mysql\mysql-connector-java\8.0.21\mysql-connector-java-8.0.21.jar;C:\Users\Lenovo\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\Lenovo\.m2\repository\com\baomidou\mybatis-plus-boot-starter\3.4.2\mybatis-plus-boot-starter-3.4.2.jar;C:\Users\Lenovo\.m2\repository\com\baomidou\mybatis-plus\3.4.2\mybatis-plus-3.4.2.jar;C:\Users\Lenovo\.m2\repository\com\baomidou\mybatis-plus-extension\3.4.2\mybatis-plus-extension-3.4.2.jar;C:\Users\Lenovo\.m2\repository\com\baomidou\mybatis-plus-core\3.4.2\mybatis-plus-core-3.4.2.jar;C:\Users\Lenovo\.m2\repository\com\baomidou\mybatis-plus-annotation\3.4.2\mybatis-plus-annotation-3.4.2.jar;C:\Users\Lenovo\.m2\repository\com\github\jsqlparser\jsqlparser\4.0\jsqlparser-4.0.jar;C:\Users\Lenovo\.m2\repository\org\mybatis\mybatis\3.5.6\mybatis-3.5.6.jar;C:\Users\Lenovo\.m2\repository\org\mybatis\mybatis-spring\2.0.5\mybatis-spring-2.0.5.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.3.7.RELEASE\spring-boot-autoconfigure-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.3.7.RELEASE\spring-boot-starter-jdbc-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\com\zaxxer\HikariCP\3.4.5\HikariCP-3.4.5.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-jdbc\5.2.12.RELEASE\spring-jdbc-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-tx\5.2.12.RELEASE\spring-tx-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\redis\clients\jedis\3.3.0\jedis-3.3.0.jar;C:\Users\Lenovo\.m2\repository\org\apache\commons\commons-pool2\2.8.1\commons-pool2-2.8.1.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.3.7.RELEASE\spring-boot-starter-aop-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-aop\5.2.12.RELEASE\spring-aop-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Lenovo\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\Lenovo\.m2\repository\net\bytebuddy\byte-buddy\1.10.18\byte-buddy-1.10.18.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-core\5.2.12.RELEASE\spring-core-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\spring-jcl\5.2.12.RELEASE\spring-jcl-5.2.12.RELEASE.jar;C:\Users\Lenovo\.m2\repository\com\alipay\sdk\alipay-sdk-java\4.22.49.ALL\alipay-sdk-java-4.22.49.ALL.jar;C:\Users\Lenovo\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\Lenovo\.m2\repository\com\alibaba\fastjson\1.2.78\fastjson-1.2.78.jar;C:\Users\Lenovo\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.62\bcprov-jdk15on-1.62.jar;C:\Users\Lenovo\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Lenovo\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot-devtools\2.3.7.RELEASE\spring-boot-devtools-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\org\springframework\boot\spring-boot\2.3.7.RELEASE\spring-boot-2.3.7.RELEASE.jar;C:\Users\Lenovo\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Lenovo\.m2\repository\com\baidu\aip\java-sdk\4.8.0\java-sdk-4.8.0.jar;C:\Users\Lenovo\.m2\repository\org\json\json\20160810\json-20160810.jar;C:\Users\Lenovo\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Lenovo\.m2\repository\com\hankcs\hanlp\restful\hanlp-restful\0.0.12\hanlp-restful-0.0.12.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.11.3\jackson-databind-2.11.3.jar;C:\Users\Lenovo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.11.3\jackson-core-2.11.3.jar;C:\Users\Lenovo\.m2\repository\org\apdplat\word\1.3\word-1.3.jar;C:\Users\Lenovo\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Lenovo\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-core\5.2.1\lucene-core-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-queryparser\5.2.1\lucene-queryparser-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-queries\5.2.1\lucene-queries-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-sandbox\5.2.1\lucene-sandbox-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-analyzers-common\5.2.1\lucene-analyzers-common-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-backward-codecs\5.2.1\lucene-backward-codecs-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-suggest\5.2.1\lucene-suggest-5.2.1.jar;C:\Users\Lenovo\.m2\repository\org\apache\lucene\lucene-misc\5.2.1\lucene-misc-5.2.1.jar;C:\Users\Lenovo\.m2\repository\com\hankcs\hanlp\portable-1.8.3\hanlp-portable-1.8.3.jar;C:\Users\Lenovo\.m2\repository\com\tencentcloudapi\tencentcloud-sdk-java-common\3.1.1444\tencentcloud-sdk-java-common-3.1.1444.jar;C:\Users\Lenovo\.m2\repository\com\squareup\okhttp3\okhttp\3.14.9\okhttp-3.14.9.jar;C:\Users\Lenovo\.m2\repository\com\squareup\okio\okio\1.17.2\okio-1.17.2.jar;C:\Users\Lenovo\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Lenovo\.m2\repository\com\squareup\okhttp3\logging-interceptor\3.14.9\logging-interceptor-3.14.9.jar;C:\Users\Lenovo\.m2\repository\org\ini4j\ini4j\0.5.4\ini4j-0.5.4.jar;C:\Users\Lenovo\.m2\repository\com\tencentcloudapi\tencentcloud-sdk-java-nlp\3.1.1405\tencentcloud-sdk-java-nlp-3.1.1405.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 255852544                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4078960640                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 4096                                   {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4078960640                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_301
+CLASSPATH=.;C:\Program Files\Java\jdk1.8.0_301\lib\dt.jar;C:\Program Files\Java\jdk1.8.0_301\lib\tools.jar;
+PATH=D:\program\VMware Workstation\bin\;D:\program\Python\3.11.4(64-bit)\Scripts\;D:\program\Python\3.11.4(64-bit)\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\program\VScode\Microsoft VS Code\bin;D:\program\Git\Git\cmd;C:\Program Files\Java\jdk1.8.0_301\bin;C:\Program Files\Java\jdk1.8.0_301\jdk\bin;"D:\program\apache-tomcat-8.5.35\lib;";"D:\program\apache-tomcat-8.5.35\bin;D:\program\MATLAB\R2024a\runtime\win64;D:\program\MATLAB\R2024a\bin;D:\program\Strawberry-perl-5.38.2.2\strawberry-perl-5.38.2.2-64bit-portable\perl\site\bin;D:\program\Strawberry-perl-5.38.2.2\strawberry-perl-5.38.2.2-64bit-portable\perl\bin;D:\program\Strawberry-perl-5.38.2.2\strawberry-perl-5.38.2.2-64bit-portable\c\bin;D:\program\Qt-5.14.2\5.14.2\mingw73_64\bin;D:\program\MySQL\ProgramFiles\bin;C:\Program Files\Java\jdk-21\bin;D:\program\SCIPOptSuite-7.0.2\SCIPOptSuite 7.0.2\bin;D:\program\Python\3.10.4(64-bit)\Scripts\;D:\program\Python\3.10.4(64-bit)\;C:\Program Files\dotnet\;D:\program\Nodejs\";D:\program\Nodejs\node_global\node_modules;D:\program\Nodejs;D:\program\Nodejs\node_cache;E:\Software\MongoDB\Server\8.0\bin;D:\program\NVM\nvm;D:\program\Nodejs\nodejs;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;E:\Software\MinGW-w64\mingw64\bin;E:\Software\Maven\apache-maven-3.9.10\bin;E:\Software\Cmake\bin;E:\Software\FFmpeg\bin;E:\Software\VCPKG\vcpkg;D:\Learning\2025-2026(1)\Software Testing\PICT\;E:\Software\Ant\apache-ant-1.10.15\bin;D:\program\Python\3.10.4(64-bit)\Scripts\;D:\program\Python\3.10.4(64-bit)\;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;D:\program\VScode\Microsoft VS Code\bin;D:\program\PyCharm\PyCharm 2024.1.4\bin;;E:\Software\iverilog\bin;E:\Software\iverilog\gtkwave\bin;D:\program\Nodejs\node_global;D:\program\NVM\nvm;D:\program\Nodejs\nodejs;C:\Users\Lenovo\.dotnet\tools
+USERNAME=Lenovo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD
+TMP=C:\Users\Lenovo\AppData\Local\Temp
+TEMP=C:\Users\Lenovo\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.7019)
+OS uptime: 25 days 21:45 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 25 model 68 stepping 1 microcode 0xa404105, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, rdpid, fsrm, f16c, cet_ss
+Processor Information for processor 0
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 1
+  Max Mhz: 3201, Current Mhz: 2566, Mhz Limit: 3201
+Processor Information for processor 2
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 3
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 4
+  Max Mhz: 3201, Current Mhz: 2566, Mhz Limit: 3201
+Processor Information for processor 5
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 6
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 7
+  Max Mhz: 3201, Current Mhz: 2566, Mhz Limit: 3201
+Processor Information for processor 8
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 9
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 10
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 11
+  Max Mhz: 3201, Current Mhz: 2566, Mhz Limit: 3201
+Processor Information for processor 12
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+Processor Information for processor 13
+  Max Mhz: 3201, Current Mhz: 2566, Mhz Limit: 3201
+Processor Information for processor 14
+  Max Mhz: 3201, Current Mhz: 2566, Mhz Limit: 3201
+Processor Information for processor 15
+  Max Mhz: 3201, Current Mhz: 3201, Mhz Limit: 3201
+
+Memory: 4k page, system-wide physical 15556M (700M free)
+TotalPageFile size 41113M (AvailPageFile size 197M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 66M, peak: 310M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.4+8-LTS-274) for windows-amd64 JRE (21.0.4+8-LTS-274), built on 2024-06-05T05:23:33Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.
