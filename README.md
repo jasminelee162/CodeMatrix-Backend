@@ -1,4 +1,4 @@
-﻿# CodeMatrix Backend
+<img width="2035" height="1068" alt="image (1)" src="https://github.com/user-attachments/assets/04c589a3-e072-4c9c-b465-e438ba349f36" /><img width="1785" height="1019" alt="image" src="https://github.com/user-attachments/assets/0133c13c-3a31-4f0f-a4fb-86c2e6695119" />﻿# CodeMatrix Backend
 
 一个综合性的软件度量与代码质量分析平台后端服务，提供多维度的代码度量、AI 智能分析与优化建议。
 
@@ -76,17 +76,20 @@ CodeMatrix-Backend 是 CodeMatrix 平台的核心服务端，致力于提供全�
 
 ## 系统架构
 
-### 功能需求图
+### 功能需求用例图
 
-[请在此处插入功能需求图]
+<img width="1785" height="1019" alt="image" src="https://github.com/user-attachments/assets/08963c05-9f3a-4edd-97ba-7432f0029275" />
+
 
 ### 软件体系结构说明图
 
-[请在此处插入软件体系结构说明图]
+<img width="2035" height="1068" alt="image (1)" src="https://github.com/user-attachments/assets/8973f2b7-3071-482e-9163-e2f90cfc3ff0" />
+
 
 ### 功能模块分解图
 
-[请在此处插入功能模块分解图]
+<img width="2018" height="1147" alt="image (2)" src="https://github.com/user-attachments/assets/1750fc25-f61d-4f61-8dad-60c2b1252115" />
+
 
 ### 核心功能流程
 
@@ -311,22 +314,6 @@ src/main/java/com/csu/ecbackend/
 
 ---
 
-## 常见问题
-
-**Q: AI 返回"余额不足"错误？**
-检查 DeepSeek API Key 是否有效、账户余额是否充足。
-
-**Q: UML 文件无法解析？**
-确保上传标准 XMI 格式文件，包含必要的 uml:Class、generalization、ownedAttribute 等节点。
-
-**Q: 度量结果与预期不符？**
-检查输入文件格式、UML 结构完整性。
-
-**Q: 服务启动失败？**
-检查数据库连接、API Key 配置、日志错误。
-
----
-
 ## 与前端集成
 
 前端项目：[CodeMatrix-Vue3](https://github.com/jasminelee162/CodeMatrix-Vue3)
@@ -417,11 +404,6 @@ mvn spring-boot:run
 # 或使用 JAR 文件
 java -jar target/ecbackend.jar
 ```
-
-服务启动后访问：
-
-- **API 文档**：http://localhost:8080/swagger-ui.html
-- **健康检查**：http://localhost:8080/actuator/health
 
 ---
 
@@ -976,89 +958,7 @@ public class CommonResponse<T> {
     }
 }
 ```
-
 ---
-
-##  测试建议
-
-### 单元测试
-
-- 度量计算逻辑验证（DIT、NOC、CBO、WMC、RFC、LCOM）
-- 代码行统计准确性（空行、注释、代码）
-- UML 解析正确性（类、方法、参数提取）
--  **AI 提示词生成** 是否包含必要信息
--  **AI 结果解析** 是否正确处理各种返回格式
-
-### 集成测试
-
-- API 端点调用（通过 Postman 或 curl）
--  **AI 服务集成** - 测试 DeepSeek API 调用、容错处理
--  **端到端流程** - 上传文件 → 度量 → AI 分析 → 优化建议
-- AI 服务稳定性（返回格式、容错处理）
-- 端到端流程（上传文件 → 解析 → 度量 → 返回）
-
-### 性能测试
-
-- 大文件处理能力（代码行数、UML 复杂度）
-- 并发请求处理能力
-- AI 调用延迟
-
----
-
-##  与前端集成
-
-前端项目地址：[CodeMatrix-Vue3](https://github.com/jasminelee162/CodeMatrix-Vue3)
-
-### 集成要点
-
-1. **CORS 跨域配置**：后端已通过 `@CrossOrigin` 开启跨域支持
-2. **API 基础路径**：前端配置后端服务地址（如 `http://localhost:8080`）
-3. **文件上传**：使用 `multipart/form-data` 格式上传文件
-4. **响应格式**：统一使用 `CommonResponse<T>` 数据结构
-
-### 前端交互示例
-
-```javascript
-// AI 度量评审
-const reviewResult = await fetch('http://localhost:8080/ai/metric-review', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    projectName: '示例项目',
-    metricSystem: 'CK度量',
-    metrics: { DIT: 3.0, CBO: 5.0, WMC: 12.0 }
-  })
-});
-
-// 代码行度量（文件上传）
-const formData = new FormData();
-formData.append('javaFile', file);
-const codeLineResult = await fetch('http://localhost:8080/CodeLines/codeLine', {
-  method: 'POST',
-  body: formData
-});
-
-// 🤖 AI 自由对话
-const aiChatResult = await fetch('http://localhost:8080/ai/chat', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    prompt: '如何降低代码耦合度？'
-  })
-});
-
-// 🤖 AI 代码优化
-const aiOptimizeResult = await fetch('http://localhost:8080/ai/optimize', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    code: xmlCode  // UML/XMI 代码
-  })
-});
-```
-
----
-
 
 ##  AI 功能特别说明
 
@@ -1077,12 +977,6 @@ const aiOptimizeResult = await fetch('http://localhost:8080/ai/optimize', {
 | 学习代码优化知识 | `/ai/chat` | 获得 AI 解释和建议 |
 | 自动生成重构方案 | `/ai/optimize` | 获得可用的优化后 XML |
 | 咨询架构设计问题 | `/ai/chat` | 获得专业建议 |
-
----
-
-##  许可证
-
-本项目采用 MIT 许可证。详见 LICENSE 文件。
 
 ---
 
