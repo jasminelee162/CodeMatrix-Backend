@@ -1,4 +1,4 @@
-<img width="2035" height="1068" alt="image (1)" src="https://github.com/user-attachments/assets/04c589a3-e072-4c9c-b465-e438ba349f36" /><img width="1785" height="1019" alt="image" src="https://github.com/user-attachments/assets/0133c13c-3a31-4f0f-a4fb-86c2e6695119" />﻿# CodeMatrix Backend
+﻿# CodeMatrix Backend
 
 一个综合性的软件度量与代码质量分析平台后端服务，提供多维度的代码度量、AI 智能分析与优化建议。
 
